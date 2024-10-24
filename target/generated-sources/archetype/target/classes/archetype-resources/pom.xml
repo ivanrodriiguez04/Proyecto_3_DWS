@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>${groupId}</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <version>${version}</version>
+
+  <name>${artifactId}</name>
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Cambiar a Java 22 -->
+    <maven.compiler.source>22</maven.compiler.source>
+    <maven.compiler.target>22</maven.compiler.target>
+    <maven.compiler.release>22</maven.compiler.release>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- Optionally: parameterized tests support -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Plugins con versiones recientes -->
+        <plugin>
+          <artifactId>${rootArtifactId}-clean-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>${rootArtifactId}-resources-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+        <plugin>
+          <!-- Plugin de compilación compatible con JDK 22 -->
+          <artifactId>${rootArtifactId}-compiler-plugin</artifactId>
+          <version>${version}</version>
+          <configuration>
+            <source>22</source>
+            <target>22</target>
+            <release>22</release>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>${rootArtifactId}-surefire-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>${rootArtifactId}-jar-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>${rootArtifactId}-install-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>${rootArtifactId}-deploy-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>${rootArtifactId}-site-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>${rootArtifactId}-project-info-reports-plugin</artifactId>
+          <version>${version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>edu.arquetipo</groupId>
+    <artifactId>maven</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Axis2 Quickstart-webapp Sample</name>
+
+    <!-- Establecer propiedades de la versión de Java -->
+    <properties>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
+        <maven.compiler.release>22</maven.compiler.release>
+        <java.version>22</java.version> <!-- propiedad personalizada -->
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- Configuración del plugin del compilador para Java 22 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version> <!-- Asegúrate de usar una versión reciente -->
+                <configuration>
+                    <source>22</source>
+                    <target>22</target>
+                    <release>22</release>
+                </configuration>
+            </plugin>
+
+            <!-- Otros plugins que uses en tu proyecto -->
+            <!-- Si usas otros plugins como surefire o war, revisa que sean compatibles con Java 22 -->
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- Dependencias de tu proyecto -->
+        <!-- Asegúrate de que todas las dependencias sean compatibles con Java 22 -->
+
+        <!-- Ejemplo de dependencia -->
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-webapp</artifactId>
+            <version>1.7.9</version> <!-- Asegúrate de usar versiones actualizadas -->
+        </dependency>
+
+        <!-- Añadir más dependencias aquí -->
+    </dependencies>
+</project>
